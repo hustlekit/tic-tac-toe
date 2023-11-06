@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { StyleSheet, Text as NativeText, TextProps } from 'react-native';
+import { Text as NativeText, TextProps } from 'react-native';
 
 type Props = {
   weight: '400' | '700',

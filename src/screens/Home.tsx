@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StackNavigatorParams } from '@config/Navigator';
+import { Button, GradientBackground } from '@components';
 
 type Props = {
   navigation: StackNavigationProp<StackNavigatorParams, 'Home'>,
@@ -9,20 +10,31 @@ type Props = {
 
 const Home = ( { navigation }: Props ) => {
   return (
-    <View style={ styles.container }>
-      <Text>Home</Text>
-      <Button
-        title={ 'Game' }
-        onPress={ () => navigation.navigate( 'Game', { gameId: 'gameId' } ) }/>
-    </View>
+    <GradientBackground>
+      <ScrollView contentContainerStyle={ styles.container }>
+        <Image source={ require( '@assets/logo.png' ) } style={ styles.logo }/>
+        <View style={ styles.buttons }>
+          <Button style={ { marginBottom: 20 } } title={ 'Single Player' }/>
+          <Button style={ { marginBottom: 20 } } title={ 'Multi Player' }/>
+          <Button style={ { marginBottom: 20 } } title={ 'Login' }/>
+          <Button style={ { marginBottom: 20 } } title={ 'Settings' }/>
+        </View>
+      </ScrollView>
+    </GradientBackground>
   );
 };
 
 const styles = StyleSheet.create( {
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 120,
+  },
+  logo: {
+    height: 150,
+    maxWidth: '60%',
+  },
+  buttons: {
+    marginTop: 80,
   },
 } );
 

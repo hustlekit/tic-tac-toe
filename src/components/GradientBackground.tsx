@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { Text, View, StyleSheet, StatusBar } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 const GradientBackground = ( { children }: Props ): ReactElement => {
   return (
     <View style={ styles.container }>
-      <StatusBar barStyle={ 'light-content' } />
+      <StatusBar barStyle={ 'light-content' }/>
       <LinearGradient style={ styles.linearGradient } colors={ [ '#120318', '#221a36' ] }/>
       { children }
     </View>

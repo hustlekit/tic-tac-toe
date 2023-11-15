@@ -14,10 +14,21 @@ const Home = ( { navigation }: Props ) => {
       <ScrollView contentContainerStyle={ styles.container }>
         <Image source={ require( '@assets/logo.png' ) } style={ styles.logo }/>
         <View style={ styles.buttons }>
-          <Button style={ { marginBottom: 20 } } title={ 'Single Player' }/>
-          <Button style={ { marginBottom: 20 } } title={ 'Multi Player' }/>
-          <Button style={ { marginBottom: 20 } } title={ 'Login' }/>
-          <Button style={ { marginBottom: 20 } } title={ 'Settings' }/>
+          <Button
+            onPress={ () => {
+              navigation.navigate( 'SinglePlayerGame' );
+            } }
+            style={ { marginBottom: 20 } }
+            title={ 'Single Player' }/>
+          <Button
+            style={ { marginBottom: 20 } }
+            title={ 'Multi Player' }/>
+          <Button
+            style={ { marginBottom: 20 } }
+            title={ 'Login' }/>
+          <Button
+            style={ { marginBottom: 20 } }
+            title={ 'Settings' }/>
         </View>
       </ScrollView>
     </GradientBackground>
